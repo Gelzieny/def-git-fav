@@ -20,12 +20,24 @@ async function fetchGitHubUser(username) {
   }
 }
 
+function isUserAlreadyInTable(username) {
+  const existingUsers = Array.from(userList.querySelectorAll('.user'))
+  return existingUsers.some(
+    user => user.querySelector('.login').textContent === `/${username}`
+  )
+}
+
 async function addUser() {
   const usernameInput = document.getElementById('username')
   const username = usernameInput.value.trim()
 
   if (!username) {
     alert('Digite um nome de usuário válido!')
+    return
+  }
+
+  if (isUserAlreadyInTable(username)) {
+    alert('Este usuário já foi adicionado!')
     return
   }
 
