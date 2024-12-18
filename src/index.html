@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="../.github/Estrela.svg"/>
+    <title>GitFav</title>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <h1 class="title">{★} GitFav</h1>
+        <div class="input-container">
+          <label class="sr-only" for="username">Buscar Usuario no Github</label>
+          <input type="text" id="username" placeholder="Digite o Github username que quer favoritar">
+          <button id="addButton"><i class="ph ph-star"></i> FAVORITAR</button>
+        </div>
+      </div>
+      <table class="bg-table">
+        <thead>
+          <tr>
+            <th class="userHead">Usuário</th>
+            <th>Repositories</th>
+            <th>Followers</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="userList">
+          <tr class="no-data">
+            <td colspan="4" class="no-favorite">
+              <h1>Nenhum usuário encontrado.</h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
